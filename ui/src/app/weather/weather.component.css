@@ -1,0 +1,13 @@
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(8, 3rem);
+}
+
+.forecast {
+  grid-column: 1 / -1;
+}
+
+.temp {
+  display: flex;
+  align-items: center;
+}

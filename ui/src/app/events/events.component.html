@@ -1,0 +1,18 @@
+
+
+<!-- <div *ngFor="let event of eventlist">
+    <p>{{event.id}}</p>
+    <p>{{event.info_url}}</p>
+</div> -->
+<p>tässä on tää loistelias data suoraan apilta:</p>
+<section *ngFor="let event of testEvents">
+
+  <article *ngIf="event.name.fi"><h1>  {{event.name.fi}} osoitteessa {{event.location.address.street_address}} </h1>
+    <span [innerHTML]="event.description.body"></span>
+
+  </article>
+
+
+
+</section>
+
