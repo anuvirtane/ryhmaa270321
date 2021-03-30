@@ -1,0 +1,9 @@
+<app-start-page></app-start-page>
+<<<<<<< HEAD
+  <app-events></app-events>
+  <app-activities></app-activities> -->
+  <app-places></app-places>
+  <app-map></app-map>
+
+=======
+>>>>>>> 903629cfa7bc1ba9773f8576f27a28c58d19a744

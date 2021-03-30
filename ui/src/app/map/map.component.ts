@@ -1,20 +1,15 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { Loader } from '@googlemaps/js-api-loader';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
-import { EventService } from '../_services/event.service';
-import { LocationService } from '../_services/location.service';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit, AfterViewInit{
+export class MapComponent implements OnInit{
   zoom = 16
-  center: google.maps.LatLngLiteral = { lat: 29,
-    lng: 60,}
+  center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
-
     zoomControl: false,
     scrollwheel: true,
     disableDoubleClickZoom: true,
@@ -26,49 +21,17 @@ export class MapComponent implements OnInit, AfterViewInit{
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
 
-
-
-  constructor(
-    private eventService: EventService,
-    private locationService: LocationService
-    ) { }
+  constructor() { }
 
   ngOnInit(): void {
     navigator.geolocation.getCurrentPosition((position) => {
-
       this.center = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       }
     });
 
-
-
-
   }
-
-  consoleLogLocation() {
-
-    console.log("nappia painettu");
-    console.log(this.center);
-  }
-
-  ngAfterViewInit() {
-
-
-
-    // console.log("trying to get events");
-    this.filterEvents();
-
-  }
-
-  filterEvents() {
-
-  }
-
-
-
-
 
   zoomIn() {
     if (this.zoom < this.options.maxZoom) this.zoom++
@@ -81,8 +44,6 @@ export class MapComponent implements OnInit, AfterViewInit{
   click(event: google.maps.MouseEvent) {
     console.log(event)
   }
-
-
 
   addMarker() {
     this.markers.push({
@@ -102,15 +63,7 @@ export class MapComponent implements OnInit, AfterViewInit{
   }
 
   openInfo(marker: MapMarker, content) {
-    this.infoContent = content
-    this.info.open(marker)
+    this.infoContent = content;
+    this.info.open(marker);
   }
-
-
-
-
-
 }
-
-
-

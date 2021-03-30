@@ -1,0 +1,10 @@
+<div class="paikat" style="text-align: center;">
+  <h1>Paikat</h1>
+  <p>Tässä ollaan</p>
+  <section class="pöö">
+    <div *ngFor="let event of places.slice(0, 10)">
+      <!-- <img src={{event.description.images[0].url}} alt="Tapahtuman kuva"> -->
+      <h5>{{event.name.fi || event.name.en || event.name.sv || event.name.zh}}</h5>
+    </div>
+  </section>
+</div>

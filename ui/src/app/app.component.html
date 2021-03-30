@@ -1,16 +1,2 @@
-<article>
-  <div class="d-flex">
-    <button class="btn btn-primary button1" (click)="show3Hours()">Näytä säätiedot ja 3 tunnin sääennuste</button>
-      <div *ngIf="show3HourForecast" class="">
-        <app-weather></app-weather>
-      </div>
+<app-start-page></app-start-page>
 
-    <button class="btn btn-info button2" (click)="show5Days()">Näytä 5 päivän sääennuste</button>
-      <div *ngIf="show5DayForecast" class="">
-        <app-forecast5days></app-forecast5days>
-      </div>
-  </div>
-
-  <app-events></app-events>
-  <app-map></app-map>
-</article>

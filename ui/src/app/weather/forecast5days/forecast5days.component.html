@@ -17,7 +17,7 @@
   <h3>5 päivän sääennuste</h3>
   <ul class="sub cursor">
     <li *ngFor="let forecast of weatherData; let i = index" [ngClass]="{selected: selectedIndex == i}">
-     <span (click)="showDetails(weatherData[i], i)">{{forecast.dt_txt | date:'EEE'}}</span>
+     <span (click)="showDetails(weatherData[i], i)">{{forecast.dt_txt | date:'dd.MM'}}</span>
 
     </li>
     <i class="fa fa-caret-up cursor" (click)="toggle()"></i>

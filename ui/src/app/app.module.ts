@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { EventsComponent } from './events/events.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Forecast5daysComponent } from './weather/forecast5days/forecast5days.component';
+import { PlacesComponent } from './places/places.component';
+import { ActivitiesComponent } from './activities/activities.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { Forecast5daysComponent } from './weather/forecast5days/forecast5days.co
     MapComponent,
     WeatherComponent,
     EventsComponent,
-    Forecast5daysComponent
+    Forecast5daysComponent,
+    PlacesComponent,
+    ActivitiesComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,

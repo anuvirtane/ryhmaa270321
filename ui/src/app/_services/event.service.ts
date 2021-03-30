@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
-  proxyUrl: string = 'https://args-proxy.herokuapp.com';
+  proxyUrl: string = environment.proxyUrl;
   apiBaseUrl: string = '/http://open-api.myhelsinki.fi/';
 
 constructor(private http: HttpClient) { }

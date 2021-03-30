@@ -10,8 +10,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class WeatherService {
   baseUrl = environment.weatherApi;
   apiKey = environment.weatherApiKey;
-  weatherData: any;
-  forecastData: any;
 
   constructor(private http: HttpClient) { }
 
@@ -34,7 +32,9 @@ export class WeatherService {
           .set('appid', this.apiKey)
       }),
       switchMap((values) => { // switchMapilla haetaan data ja välitetään se http get metodille
+        console.log(this.baseUrl + 'forecast', { params: values });
         return this.http.get(this.baseUrl + 'forecast', { params: values })
+        //https://api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10&appid=7d3404f41e5b1053efc8acdd90d6ebd8
       })
     )
   }

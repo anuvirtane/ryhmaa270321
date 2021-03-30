@@ -1,12 +1,10 @@
-<div class="tapahtumat" style="text-align: center;">
-  <h1>Tapahtumat</h1>
-  <p>Jotakin tapahtuu jossakin</p>
+<div class="aktiviteetit" style="text-align: center;">
+  <h1>Aktiviteetit</h1>
+  <p>Jep</p>
   <section class="pöö">
-    <div *ngFor="let event of testEvents.slice(0, 10)">
+    <div *ngFor="let event of testActivities.slice(0, 10)">
       <img src={{event.description.images[0].url}} alt="Tapahtuman kuva">
       <h5>{{event.name.fi || event.name.en || event.name.sv || event.name.zh}}</h5>
     </div>
   </section>
-
 </div>
-

@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ui';
-  show5DayForecast: boolean = false;
-  show3HourForecast: boolean = false;
-
-  show5Days() {
-    this.show5DayForecast = !this.show5DayForecast;
-  }
-
-  show3Hours() {
-    this.show3HourForecast = !this.show3HourForecast;
-  }
 }
